@@ -35,11 +35,8 @@ function ready(error, us) {
         }
     });
 
-    document.getElementById("toggleButton").value="MAP";
     makeMap(us);
 
-    document.getElementById("toggleButton").addEventListener("click", 
-    function(){ swapMap(us);});
 
     $('#radio_options').change(function(){
         dem = $("input[name='dem_radio']:checked").val();
