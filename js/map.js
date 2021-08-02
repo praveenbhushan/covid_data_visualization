@@ -1,7 +1,7 @@
 
 function makeMap(us) {
     var val = document.getElementById("myRange").value;
-    //document.getElementById("week").innerHTML = weeks[val-1];
+    document.getElementById("week").innerHTML = weeks[val-1];
   
     var num_error_counties = 0;
   
