@@ -5,7 +5,8 @@
 
 
 <title>COVID-19 App</title>
-<h1 class="title">COVID-19 Movement & Cases Tracker</h1></br>
+<h1 class="title">COVID-19 Movement & Cases Tracker
+  with Demographic Trends</h1></br>
 <h4 class="title">Move Index Data: <a href="https://help.cuebiq.com/hc/en-us/articles/360041285051-Reading-Cuebiq-s-COVID-19-Mobility-Insights">Cuebiq Mobility Index Analysis</a> uses phone data to measure the median distance traveled by all devices per county</h4> 
 <h4 class="title">Cases Data: <a href="https://github.com/nytimes/covid-19-data">covid-19-data</a> is a New York Times GitHub repository that is updated each day with new cases and deaths by county</h4> 
 <div class="row">
@@ -20,7 +21,7 @@
     <div class="row" id="userbox">
         <div class="wrap">
           <div class="search">
-              <input type="text" class="searchTerm" id="queriedCounty" placeholder="County (e.g. Essex)">
+              <input type="text" class="searchTerm" id="queriedCounty" placeholder="Enter a county (e.g. Santa Barbara)">
               <button type="submit" class="searchButton" onClick=handleQuery()>
                 <i class="fa fa-search"></i>
               </button>
@@ -36,7 +37,7 @@
      <div class="row" id="userbox">
       <div class="wrap">
         <div class="search">
-            <input type="text" class="searchTerm" id="queriedState" placeholder="State (e.g. New Jersey)">
+            <input type="text" class="searchTerm" id="queriedState" placeholder="Enter a state (e.g. Massachusetts)">
             <button type="submit" class="searchButton" onClick=handleStateQuery()>
               <i class="fa fa-search"></i>
           </button>
@@ -47,6 +48,27 @@
         <div id ="barchart"> </div>
     </div>   
     <div id="alertdiv" style="display:none"></div>
+  </div>
+  <div class="column1" style="position: sticky; margin-top:10px;">
+     <div id= "dem_options" style="position: relative; margin-bottom: -15%; margin-top: 3%; border: 1px #000000 solid; padding: 0px 10px 10px 10px;
+             float: left; margin-left: 5%; visibility: hidden">
+          <div id= "option_title"><h3 style="margin-bottom: 5px">Filter by Demographic</h3></div>
+        <form id= "radio_options">
+          <input type="radio" name="dem_radio" value="income" id="income_check" checked>Income
+            <label class="dem_option" for="income_check"></label>
+          <br>
+          <input type="radio" name="dem_radio" value="vote" id="politics_check">Politics
+          <label class="dem_option" for="income_check"></label>
+          <br>
+          <input type="radio" name="dem_radio" value="unemp" id="unemployment_check">Unemployment
+            <label class="dem_option" for="politics_check"></label>
+        </form>
+    </div>
+    <a href="#" id="toggleButton" value="MAP" class="myButton"
+       style="margin-bottom: -5%; position: relative; z-index: 1;
+             float: right; margin-right: 5%"style>Switch to Demographic Trends</a>
+    <svg id="maps" style="max-height:44vw; min-height:200px"></svg>
+    <div style="margin-top:-10%" id="map-legend"></div>
   </div>
 </div>
 <footer>
@@ -60,6 +82,10 @@
 <script src="js/d3-tip.js"></script>
 <script type = "text/javascript" src="move_index.json"></script>
 <script type = "text/javascript" src="us-county-cases.json"></script>
+<script type = "text/javascript" src="trends/income_pos.json"></script>
+<script type = "text/javascript" src="trends/pos-vote.json"></script>
+<script type = "text/javascript" src="trends/unemployment.json"></script>
+<script type = "text/javascript" src="trends/unemp.json"></script>
 <script type = "text/javascript" src="trends/demographic-data.json"></script>
 <script type = "text/javascript" src="donut/donut.js"></script>
 <script type = "text/javascript" src="donut/index.js"></script>
