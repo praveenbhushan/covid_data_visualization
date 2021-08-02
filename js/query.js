@@ -107,7 +107,7 @@ function unhighlight() {
 
 function highlight_single(county) {
     console.log(county);
-    var val = document.getElementById("myRange").value;
+    //var val = document.getElementById("myRange").value;
     console.log("map");
     svg.selectAll(".counties path")
       .transition()
