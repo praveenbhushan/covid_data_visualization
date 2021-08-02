@@ -186,8 +186,9 @@ svg.call(tip)
 
 var ordinal = d3.scaleOrdinal()
   .domain(["<= 0.8", "0.8", "1.6", "2.4", "3 >="])
-  .range(["rgb(154,219,181)", "rgb(205, 235, 178)", "rgb(246,245,174)", 
-          "rgb(253, 223, 158)", "rgb(211, 85, 65)"]);
+  //.range(["rgb(154,219,181)", "rgb(205, 235, 178)", "rgb(246,245,174)", 
+  //        "rgb(253, 223, 158)", "rgb(211, 85, 65)"]);
+  .range(["#32CD32", "#00FF00", "#FFD700", "#FFA500", "#FF4500" ]);
 
 var legend = d3.select("#map-legend").append("svg");
 
