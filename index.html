@@ -20,7 +20,7 @@
     <div class="row" id="userbox">
         <div class="wrap">
           <div class="search">
-              <input type="text" class="searchTerm" id="queriedCounty" placeholder="Enter a county (e.g. Santa Barbara)">
+              <input type="text" class="searchTerm" id="queriedCounty" placeholder="County (e.g. Essex)">
               <button type="submit" class="searchButton" onClick=handleQuery()>
                 <i class="fa fa-search"></i>
               </button>
@@ -36,7 +36,7 @@
      <div class="row" id="userbox">
       <div class="wrap">
         <div class="search">
-            <input type="text" class="searchTerm" id="queriedState" placeholder="Enter a state (e.g. Massachusetts)">
+            <input type="text" class="searchTerm" id="queriedState" placeholder="State (e.g. New Jersey)">
             <button type="submit" class="searchButton" onClick=handleStateQuery()>
               <i class="fa fa-search"></i>
           </button>
@@ -85,7 +85,7 @@ d3.select("#sliderinfo")
 .text("Slide to explore weekly movement changes.")
 
 d3.select("#queryinfo")
-.text("Query a county OR state to view number of COVID-19 cases")
+.text("Enter a county OR state to view number of COVID-19 cases")
 
 var margin = {top: 10, left: 10, bottom: 10, right: 10}
   , width = $("body").width() / 1.1
@@ -139,15 +139,20 @@ var quantize = d3.scaleQuantize()
       .domain([0, 4])
       .range(d3.range(5).map(function(i) { 
           if (i == 0)
-              return "#9adbb5";
+              //return "#9adbb5";
+              return "#32CD32"
           else if (i == 1)
-              return "rgb(205, 235, 178)";
+              //return "rgb(205, 235, 178)";
+              return "#00FF00"
           else if (i == 2)
-              return "#F6F5AE";
+              //return "#F6F5AE";
+              return "#FFD700"
           else if (i == 3)
-              return "rgb(253, 223, 158)";
+              //return "rgb(253, 223, 158)";
+              return "#FFA500"
           else
-              return "rgb(211, 85, 65)";
+              //return "rgb(211, 85, 65)";
+              return "#FF4500"
       }))
 
 var projection = d3.geoAlbersUsa()
