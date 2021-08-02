@@ -19,7 +19,7 @@ function change_move() {
     unhighlight();
   
     var val = document.getElementById("myRange").value;
-    document.getElementById("week").innerHTML = weeks[val-1];
+    //document.getElementById("week").innerHTML = weeks[val-1];
     var t = d3.transition()
         .duration(750);
   
@@ -101,7 +101,7 @@ function in_move_range(move_index, d, val) {
     unhighlight();
   
     var val = document.getElementById("myRange").value;
-    document.getElementById("week").innerHTML = weeks[val-1];
+    //document.getElementById("week").innerHTML = weeks[val-1];
     var t = d3.transition()
         .duration(750);
   
